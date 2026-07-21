@@ -27,3 +27,10 @@ function calculateBMI() {
     result.innerHTML = "BMI: " + bmi + " (" + cat + ")";
     suggestion.innerHTML = "Suggestion: " + sug;
 }
+
+function resetFields() {
+    document.getElementById("weight").value = "";
+    document.getElementById("height").value = "";
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("suggestion").innerHTML = "";
+}
