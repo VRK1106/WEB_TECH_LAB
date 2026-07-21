@@ -1,334 +1,85 @@
-/* ==========================================================================
-   Global Resets and Base Typography
-   ========================================================================== */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
-    background-color: #f4f7f6;
-    color: #333333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 15px;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #dddddd;
-    margin: 40px 0;
-}
-
-/* ==========================================================================
-   Header and Navigation Styling
-   ========================================================================== */
-header {
-    background-color: #0f2027;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f4f8; /* Soft blue-gray background */
+    color: #102a43; /* Dark blue text */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    border-radius: 8px;
-    border: 2px solid #203a43;
-}
-
-header h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav ul li a {
-    color: #b0bec5;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover, 
-nav ul li a.active {
-    color: #ffffff;
-    background-color: #2c5364;
-}
-
-/* ==========================================================================
-   Hero Banner Design
-   ========================================================================== */
-.banner {
-    background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(44, 83, 100, 0.85)), 
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header, footer {
     text-align: center;
+    background-color: #102a43; /* Deep slate blue */
     color: #ffffff;
-    padding: 0 20px;
+    padding: 10px;
 }
-
-.banner-content h2 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-}
-
-.banner-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 25px auto;
-    color: #eceff1;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #00adb5;
-    color: #ffffff;
-    padding: 12px 28px;
+nav a {
+    color: #bcccdc; /* Soft blue-gray link */
     text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    margin: 0 10px;
+    font-weight: bold;
 }
-
-.btn:hover {
-    background-color: #007a80;
+nav a:hover {
+    color: #ffffff; /* White link hover */
 }
-
-/* ==========================================================================
-   Layout Layouts (Grids)
-   ========================================================================== */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 25px;
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 35px;
-    margin-top: 25px;
-}
-
-.card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border-top: 4px solid #00adb5;
-}
-
-.blue-card {
-    border-top: 4px solid #2c5364;
-    background-color: #f0f4f8;
-}
-
-.card h4, .card h3 {
-    margin-bottom: 12px;
-    color: #0f2027;
-}
-
-/* ==========================================================================
-   Lists & Component Layouts
-   ========================================================================== */
-.objectives {
-    margin: 35px 0;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 6px;
-}
-
-.objectives ul {
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.objectives li {
-    margin-bottom: 8px;
-}
-
-.team-member {
-    background: #ffffff;
-    padding: 15px;
-    text-align: center;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
-}
-
-.service-item {
-    background: #ffffff;
+main {
+    flex: 1;
     padding: 20px;
-    margin-bottom: 20px;
-    border-left: 5px solid #00adb5;
-    border-radius: 0 6px 6px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
 }
-
-.service-item h3 {
-    margin-bottom: 5px;
-    color: #0f2027;
+h2, h3 {
+    color: #1976d2; /* Clean blue headers */
 }
-
-/* ==========================================================================
-   Table Component Styling
-   ========================================================================== */
-.pricing {
-    margin-top: 45px;
-}
-
-.styled-table {
+table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 1rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    border-radius: 6px 6px 0 0;
-    overflow: hidden;
+    margin-top: 15px;
+    background-color: #ffffff;
 }
-
-.styled-table injustices-thead tr {
-    background-color: #0f2027;
+th {
+    background-color: #102a43; /* Dark header */
     color: #ffffff;
+    padding: 8px;
     text-align: left;
-    font-weight: bold;
 }
-
-.styled-table th, 
-.styled-table td {
-    padding: 12px 15px;
+td {
+    padding: 8px;
+    border: 1px solid #bcccdc;
+    text-align: left;
 }
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+tr:nth-child(even) {
+    background-color: #f0f4f8; /* Alternating row color */
+}
+form {
+    max-width: 300px;
+    margin-top: 15px;
     background-color: #ffffff;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #0f2027;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #00adb5;
-    background-color: #faffff;
-}
-
-.styled-table tbody tr:hover {
-    background-color: #f1f5f9;
-    cursor: pointer;
-}
-
-/* ==========================================================================
-   Form Component Styling
-   ========================================================================== */
-.styled-form {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #444;
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
+    padding: 15px;
+    border: 1px solid #bcccdc;
     border-radius: 4px;
-    font-size: 1rem;
-    background-color: #fafafa;
-    transition: border-color 0.3s ease;
 }
-
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: #00adb5;
-    background-color: #ffffff;
+input, select, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 1px solid #bcccdc;
+    border-radius: 4px;
 }
-
-.submit-btn {
-    background-color: #00adb5;
+button {
+    width: 100%;
+    padding: 8px;
+    background-color: #1976d2; /* Primary blue button */
     color: #ffffff;
     border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    transition: background 0.3s ease;
+    font-weight: bold;
 }
-
-.submit-btn:hover {
-    background-color: #0f2027;
-}
-
-.map-placeholder {
-    margin-top: 25px;
-    background: #ebeeef;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 6px;
-    border: 2px dashed #b0bec5;
-}
-
-/* ==========================================================================
-   Footer Component Styling
-   ========================================================================== */
-footer {
-    background-color: #0f2027;
-    color: #b0bec5;
-    text-align: center;
-    padding: 20px 10px;
-    margin-top: 60px;
-    font-size: 0.85rem;
-    border-top: 3px solid #00adb5;
+button:hover {
+    background-color: #115293; /* Darker blue button hover */
 }
