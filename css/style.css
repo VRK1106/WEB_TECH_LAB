@@ -7,16 +7,23 @@ nav {
     background-color: #004d40;
     padding: 10px;
     margin-bottom: 20px;
+    text-align: right;
 }
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    margin-left: 15px;
     font-weight: bold;
 }
-h1, h2 {
+h1 {
     color: #00796b;
+    text-align: center;
     margin-top: 15px;
+    margin-bottom: 10px;
+}
+h2 {
+    color: #00796b;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 ul {
@@ -47,6 +54,6 @@ button {
 }
 img {
     display: block;
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 4px;
 }
