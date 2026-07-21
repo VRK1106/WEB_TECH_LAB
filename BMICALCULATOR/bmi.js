@@ -1,7 +1,8 @@
 function calculateBMI() {
     let weight = parseFloat(document.getElementById("weight").value);
-    let height = parseFloat(document.getElementById("height").value);
-    if (!weight || !height || weight <= 0 || height <= 0) {
+    let heightCm = parseFloat(document.getElementById("height").value);
+    let height = heightCm / 100;
+    if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
         alert("Please enter valid positive numbers for weight and height.");
         return; 
     }
