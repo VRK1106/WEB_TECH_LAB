@@ -61,6 +61,17 @@ ul {
 li {
     margin-bottom: 5px;
 }
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e4e7eb;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.card h4 {
+    color: #1976d2;
+    margin-bottom: 5px;
+}
 table {
     width: 100%;
     border-collapse: collapse;
