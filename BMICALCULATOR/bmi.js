@@ -1,43 +1,33 @@
 function calculateBMI() {
     let weight = parseFloat(document.getElementById("weight").value);
-    let heightCm = parseFloat(document.getElementById("height").value);
-    let height = heightCm / 100;
-    let resultContainer = document.getElementById("result");
-    
-    if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
-        resultContainer.className = "result-card error";
-        resultContainer.innerHTML = "<h3>Error</h3><p class='suggest-txt'>Please enter valid positive numbers for weight and height.</p>";
-        return; 
+    let height = parseFloat(document.getElementById("height").value) / 100;
+    let result = document.getElementById("result");
+    let suggestion = document.getElementById("suggestion");
+
+    if (!weight || !height || weight <= 0 || height <= 0) {
+        result.innerHTML = "Please enter valid values.";
+        suggestion.innerHTML = "";
+        return;
     }
-    
-    let bmi = weight / (height * height);
-    let roundedBMI = bmi.toFixed(2);
-    let category = "";
-    let suggestion = "";
-    let className = "";
-    
+
+    let bmi = (weight / (height * height)).toFixed(2);
+    let cat = "";
+    let sug = "";
+
     if (bmi < 18.5) {
-        category = "Underweight";
-        suggestion = "Increase nutritious food intake and consult a dietitian if necessary.";
-        className = "underweight";
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
-        category = "Normal Weight";
-        suggestion = "Maintain your healthy lifestyle with balanced diet and regular exercise.";
-        className = "normal";
-    } else if (bmi >= 25 && bmi <= 29.9) {
-        category = "Overweight";
-        suggestion = "Reduce calorie intake and exercise regularly.";
-        className = "overweight";
+        cat = "Underweight";
+        sug = "Eat more nutritious food.";
+    } else if (bmi <= 24.9) {
+        cat = "Normal Weight";
+        sug = "Keep it up!";
+    } else if (bmi <= 29.9) {
+        cat = "Overweight";
+        sug = "Exercise regularly.";
     } else {
-        category = "Obese";
-        suggestion = "Consult a healthcare professional and adopt a healthy lifestyle.";
-        className = "obese";
+        cat = "Obese";
+        sug = "Consult a doctor.";
     }
-    
-    resultContainer.className = "result-card " + className;
-    resultContainer.innerHTML = `
-        <h3>${category}</h3>
-        <p class="bmi-val">BMI Value: <strong>${roundedBMI}</strong></p>
-        <p class="suggest-txt">Suggestion: ${suggestion}</p>
-    `;
+
+    result.innerHTML = "BMI: " + bmi + " (" + cat + ")";
+    suggestion.innerHTML = "Suggestion: " + sug;
 }
