@@ -3,17 +3,14 @@ function calculateBMI() {
     let height = parseFloat(document.getElementById("height").value) / 100;
     let result = document.getElementById("result");
     let suggestion = document.getElementById("suggestion");
-
     if (!weight || !height || weight <= 0 || height <= 0) {
         result.innerHTML = "Please enter valid values.";
         suggestion.innerHTML = "";
         return;
     }
-
     let bmi = (weight / (height * height)).toFixed(2);
     let cat = "";
     let sug = "";
-
     if (bmi < 18.5) {
         cat = "Underweight";
         sug = "Eat more nutritious food.";
@@ -27,7 +24,6 @@ function calculateBMI() {
         cat = "Obese";
         sug = "Consult a doctor.";
     }
-
     result.innerHTML = "BMI: " + bmi + " (" + cat + ")";
     suggestion.innerHTML = "Suggestion: " + sug;
 }
