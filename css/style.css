@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
 }
 nav {
-    background-color: #00008b;
+    background-color: #004d40;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -15,7 +15,7 @@ nav a {
     font-weight: bold;
 }
 h1, h2 {
-    color: #00008b;
+    color: #00796b;
     margin-top: 15px;
     margin-bottom: 10px;
 }
@@ -40,7 +40,7 @@ input, textarea {
 }
 button {
     padding: 5px 15px;
-    background-color: #00008b;
+    background-color: #00796b;
     color: white;
     border: none;
     cursor: pointer;
